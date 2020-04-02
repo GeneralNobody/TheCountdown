@@ -9,15 +9,16 @@ namespace EscapeRoom
         static void Main(string[] args)
         {
             Console.Write("Welcome to our Escape Room!!!\n" +
-                "To check if your answers were correct, please enter the letter codes you got per part into this program.\n" +
+                "To check if your answers were correct, please enter the letter or number codes you got per part into this program.\n" +
                 "First, select which assignment you want to enter the answer to first:\n" +
                 "A: Clay Minerals\n" +
                 "B: Crossword Puzzle\n" +
                 "C: Rebus\n" +
                 "D: Riddle\n");
-            while (true)
+            var unsuccessful = true;
+            while (unsuccessful)
             {
-                Console.Write("Please choose one of the assignments mentioned above (A/B/C/D): ");
+                Console.Write("Please choose one of the assignments mentioned above (A/B/C/D) or type 'finish' to check your answers: ");
                 var option = Console.ReadLine().ToLower();
                 if (option == "a")
                 {
@@ -38,6 +39,17 @@ namespace EscapeRoom
                 {
                     Console.Write("Please enter your answer for D: ");
                     answers.AnswerD = Console.ReadLine();
+                }
+                else if (option == "finish")
+                {
+                    if (answers.AnswerA != null && answers.AnswerB != null && answers.AnswerC != null && answers.AnswerD != null)
+                    {
+                        unsuccessful = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: Please fill in all answers and try again.");
+                    }
                 }
                 else
                 {
