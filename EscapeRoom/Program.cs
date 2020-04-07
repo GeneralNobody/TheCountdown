@@ -11,7 +11,7 @@ namespace EscapeRoom
         private static Answers answers = new Answers(null, null, null, null);
 
         // Correct answers object, holds all of the default values
-        private static Answers correctAnswers = new Answers("77777277755555337777", "aarde", "22900", "kleidiatomee");
+        private static readonly Answers correctAnswers = new Answers("77777277755555337777", "aarde", "22900", "kleidiatomee");
 
         // Main function, gets executed when the program is started.
         static void Main(string[] args)
@@ -70,22 +70,41 @@ namespace EscapeRoom
                     Console.ForegroundColor = ConsoleColor.Yellow;
                 }
             }
-            /*
-            string[] answersArr = ((IEnumerable)answers).Cast<object>()
-                                                        .Select(x => x.ToString())
-                                                        .ToArray();
-            string[] correctAnswersArr = ((IEnumerable)answers).Cast<object>()
-                                                               .Select(x => x.ToString())
-                                                               .ToArray();
-
-            for (int i = 0; i < answersArr.Length; i++)
+            if (answers.AnswerA == correctAnswers.AnswerA)
             {
-                if (answersArr[i] != correctAnswersArr[i])
-                {
-                    Console.WriteLine("Error: Answer " + i + " doesn't match.");
-                }
+                Console.WriteLine("Answer A is correct");
             }
-            */
+            else
+            {
+                //
+            }
+
+            if (answers.AnswerB == correctAnswers.AnswerB)
+            {
+                Console.WriteLine("Answer B is correct");
+            }
+            else
+            {
+                //
+            }
+
+            if (answers.AnswerC == correctAnswers.AnswerC)
+            {
+                Console.WriteLine("Answer C is correct");
+            }
+            else
+            {
+                //
+            }
+
+            if (answers.AnswerD == correctAnswers.AnswerD)
+            {
+                Console.WriteLine("Answer D is correct");
+            }
+            else
+            {
+                //
+            }
             Console.ResetColor();
         }
     }
