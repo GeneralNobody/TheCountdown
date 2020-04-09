@@ -12,8 +12,6 @@ namespace EscapeRoom
         // Correct answers object, holds all of the default values
         private static readonly Answers correctAnswers = new Answers("77777277755555337777", "aarde", "22900", "kleidiatomee");
 
-        private static bool[] answersCorrect = new bool[4];
-
         // Main function, gets executed when the program is started.
         static void Main(string[] args)
         {
@@ -71,53 +69,46 @@ namespace EscapeRoom
                     Console.ForegroundColor = ConsoleColor.Yellow;
                 }
             }
-            if (answers.AnswerA == correctAnswers.AnswerA)
+
+            unsuccessful = true;
+            while (unsuccessful)
             {
-                Console.WriteLine("Answer A is correct");
-                answersCorrect[0] = true;
-            }
-            else
-            {
-                Console.WriteLine("Answer A is incorrect.");
-                answersCorrect[0] = false;
+                if (answers.AnswerA == correctAnswers.AnswerA)
+                {
+                    Console.WriteLine("Answer A is correct");
+                }
+                else
+                {
+                    Console.Write("Answer A is incorrect. Please enter a new value for A: ");
+                    answers.AnswerA = Console.ReadLine();
+                }
             }
 
             if (answers.AnswerB == correctAnswers.AnswerB)
             {
                 Console.WriteLine("Answer B is correct");
-                answersCorrect[1] = true;
             }
             else
             {
                 Console.WriteLine("Answer A is incorrect.");
-                answersCorrect[1] = false;
             }
 
             if (answers.AnswerC == correctAnswers.AnswerC)
             {
                 Console.WriteLine("Answer C is correct");
-                answersCorrect[2] = true;
             }
             else
             {
                 Console.WriteLine("Answer A is incorrect.");
-                answersCorrect[2] = false;
             }
 
             if (answers.AnswerD == correctAnswers.AnswerD)
             {
                 Console.WriteLine("Answer D is correct");
-                answersCorrect[3] = true;
             }
             else
             {
                 Console.WriteLine("Answer A is incorrect.");
-                answersCorrect[3] = false;
-            }
-
-            if (answersCorrect.All(x => x))
-            {
-                Console.WriteLine("All answers are correct");
             }
 
             Console.ResetColor();
