@@ -76,6 +76,7 @@ namespace EscapeRoom
                 if (answers.AnswerA == correctAnswers.AnswerA)
                 {
                     Console.WriteLine("Answer A is correct");
+                    unsuccessful = false;
                 }
                 else
                 {
@@ -84,31 +85,49 @@ namespace EscapeRoom
                 }
             }
 
-            if (answers.AnswerB == correctAnswers.AnswerB)
+            unsuccessful = true;
+            while (unsuccessful)
             {
-                Console.WriteLine("Answer B is correct");
-            }
-            else
-            {
-                Console.WriteLine("Answer A is incorrect.");
-            }
-
-            if (answers.AnswerC == correctAnswers.AnswerC)
-            {
-                Console.WriteLine("Answer C is correct");
-            }
-            else
-            {
-                Console.WriteLine("Answer A is incorrect.");
+                if (answers.AnswerB == correctAnswers.AnswerB)
+                {
+                    Console.WriteLine("Answer B is correct");
+                    unsuccessful = false;
+                }
+                else
+                {
+                    Console.Write("Answer B is incorrect. Please enter a new value for B: ");
+                    answers.AnswerB = Console.ReadLine();
+                }
             }
 
-            if (answers.AnswerD == correctAnswers.AnswerD)
+            unsuccessful = true;
+            while (unsuccessful)
             {
-                Console.WriteLine("Answer D is correct");
+                if (answers.AnswerC == correctAnswers.AnswerC)
+                {
+                    Console.WriteLine("Answer C is correct");
+                    unsuccessful = false;
+                }
+                else
+                {
+                    Console.Write("Answer C is incorrect. Please enter a new value for C: ");
+                    answers.AnswerC = Console.ReadLine();
+                }
             }
-            else
+
+            unsuccessful = true;
+            while (unsuccessful)
             {
-                Console.WriteLine("Answer A is incorrect.");
+                if (answers.AnswerD == correctAnswers.AnswerD)
+                {
+                    Console.WriteLine("Answer D is correct");
+                    unsuccessful = false;
+                }
+                else
+                {
+                    Console.Write("Answer D is incorrect. Please enter a new value for D: ");
+                    answers.AnswerD = Console.ReadLine();
+                }
             }
 
             Console.ResetColor();
