@@ -1,6 +1,6 @@
 ﻿using EscapeRoom.Objects;
 using System;
-using System.Linq;
+using System.Threading;
 
 namespace EscapeRoom
 {
@@ -23,8 +23,9 @@ namespace EscapeRoom
                 "B: Crossword Puzzle\n" +
                 "C: Rebus\n" +
                 "D: Riddle\n");
-            var unsuccessful = true;
+
             // While loop which continues running until all values are filled in and the user has typed 'finish'.
+            var unsuccessful = true;
             while (unsuccessful)
             {
                 Console.Write("Please choose one of the assignments mentioned above (A/B/C/D) or type 'finish' to check your answers: ");
@@ -51,6 +52,8 @@ namespace EscapeRoom
                 }
                 else if (option == "finish")
                 {
+                    Console.WriteLine("Validating answers...");
+                    Thread.Sleep(1000);
                     if (answers.AnswerA != null && answers.AnswerB != null && answers.AnswerC != null && answers.AnswerD != null)
                     {
                         unsuccessful = false;
@@ -70,6 +73,11 @@ namespace EscapeRoom
                 }
             }
 
+            Console.WriteLine("Checking answers...");
+            Thread.Sleep(800);
+            Console.WriteLine("Checking answer A...");
+            Thread.Sleep(1000);
+
             unsuccessful = true;
             while (unsuccessful)
             {
@@ -84,6 +92,10 @@ namespace EscapeRoom
                     answers.AnswerA = Console.ReadLine();
                 }
             }
+
+            Thread.Sleep(500);
+            Console.WriteLine("Checking answer B...");
+            Thread.Sleep(900);
 
             unsuccessful = true;
             while (unsuccessful)
@@ -100,6 +112,10 @@ namespace EscapeRoom
                 }
             }
 
+            Thread.Sleep(500);
+            Console.WriteLine("Checking answer C...");
+            Thread.Sleep(1100);
+
             unsuccessful = true;
             while (unsuccessful)
             {
@@ -114,6 +130,10 @@ namespace EscapeRoom
                     answers.AnswerC = Console.ReadLine();
                 }
             }
+
+            Thread.Sleep(500);
+            Console.WriteLine("Checking answer D...");
+            Thread.Sleep(1000);
 
             unsuccessful = true;
             while (unsuccessful)
@@ -130,6 +150,9 @@ namespace EscapeRoom
                 }
             }
 
+            Thread.Sleep(1000);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Success! All your answers are correct. The bomb has now been defused and you may safely leave the room. Have a good day!");
             Console.ResetColor();
         }
     }
