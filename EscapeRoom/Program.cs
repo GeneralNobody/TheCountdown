@@ -17,14 +17,13 @@ namespace EscapeRoom
         static void Main(string[] args)
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(FiggleFonts.Slant.Render("The Countdown"));
             Console.Write("Welcome to our Escape Room, the Countdown!\n" +
                 "You are stuck in a room with a bomb, so you must defuse it within the 50-minute time limit!\n" +
                 "To check if your answers were correct, please enter the letter or number codes you got per part into this program.\n" +
                 "Please hurry up, because the bomb is already ticking! TICK... TOCK.. TICK... TOCK...\n" +
                 "First, select which assignment you want to enter the answer to first:\n" +
-                "A: Clay Minerals\n" +
+                "A: Proefje\n" +
                 "B: Crossword Puzzle\n" +
                 "C: Rebus\n" +
                 "D: Riddle\n");
@@ -67,14 +66,14 @@ namespace EscapeRoom
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Error: Please fill in all answers and try again.");
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ResetColor();
                     }
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Error: Please enter one of the options mentioned above.");
-                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.ResetColor();
                 }
             }
 
