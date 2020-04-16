@@ -10,7 +10,7 @@ namespace EscapeRoom
         private static Answers answers = new Answers(null, null, null, null);
 
         // Correct answers object, holds all of the default values
-        private static readonly Answers correctAnswers = new Answers("77777277755555337777", "aarde", "22900", "kleidiatomee");
+        private static readonly Answers correctAnswers = new Answers("342222443", "aarde", "159", "kleidiatomee");
 
         // Main function, gets executed when the program is started.
         static void Main(string[] args)
@@ -18,6 +18,7 @@ namespace EscapeRoom
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("Welcome to our Escape Room!!!\n" +
                 "To check if your answers were correct, please enter the letter or number codes you got per part into this program.\n" +
+                "Please hurry up, because the bomb is still ticking! TICK... TOCK.. TICK... TOCK...\n" +
                 "First, select which assignment you want to enter the answer to first:\n" +
                 "A: Clay Minerals\n" +
                 "B: Crossword Puzzle\n" +
