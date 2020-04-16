@@ -1,4 +1,5 @@
 ﻿using EscapeRoom.Objects;
+using Figgle;
 using System;
 using System.Threading;
 
@@ -15,10 +16,13 @@ namespace EscapeRoom
         // Main function, gets executed when the program is started.
         static void Main(string[] args)
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write("Welcome to our Escape Room!!!\n" +
+            Console.WriteLine(FiggleFonts.Slant.Render("The Countdown"));
+            Console.Write("Welcome to our Escape Room, the Countdown!\n" +
+                "You are stuck in a room with a bomb, so you must defuse it within the 50-minute time limit!\n" +
                 "To check if your answers were correct, please enter the letter or number codes you got per part into this program.\n" +
-                "Please hurry up, because the bomb is still ticking! TICK... TOCK.. TICK... TOCK...\n" +
+                "Please hurry up, because the bomb is already ticking! TICK... TOCK.. TICK... TOCK...\n" +
                 "First, select which assignment you want to enter the answer to first:\n" +
                 "A: Clay Minerals\n" +
                 "B: Crossword Puzzle\n" +
