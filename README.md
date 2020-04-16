@@ -12,8 +12,7 @@ To insert the program path, just drag and drop the program into the *Terminal* w
 
 ### Windows
 First, download the [latest release](https://github.com/GeneralNobody/EscapeRoom/releases/latest) from the releases tab which matches your OS, in this case the version which has 'win_x64' in its name.  
-Then, open your *Command Prompt* by pressing *WinKey+R* and typing cmd in there.
-Find your installed file, likely in the *Downloads* folder, unzip it and drag and drop the .exe file into your *Command Prompt* window.  
+Then, double-click on the .exe file and a *Command Prompt* window will open with the program.
 
 ### Linux
 Linux support is coming soon, please stay tuned!
