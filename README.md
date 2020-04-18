@@ -1,4 +1,4 @@
-# EscapeRoom
+# The Countdown - An EscapeRoom Project
 A companion app for our Escape Room project "The Countdown" for NLT.
 
 ## Installation
